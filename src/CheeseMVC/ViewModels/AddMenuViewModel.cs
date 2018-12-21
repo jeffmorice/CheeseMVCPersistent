@@ -10,8 +10,10 @@ namespace CheeseMVC.ViewModels
 {
     public class AddMenuViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "You must give your Menu a name.")]
         [Display(Name="Menu Name")]
         public string Name { get; set; }
+
+        public AddMenuViewModel() { }
     }
 }

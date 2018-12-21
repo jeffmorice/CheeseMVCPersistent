@@ -26,7 +26,9 @@ namespace CheeseMVC.Controllers
 
         public IActionResult Add()
         {
-            return View(new AddMenuViewModel());
+            AddMenuViewModel addMenuViewModel = new AddMenuViewModel();
+
+            return View(addMenuViewModel);
         }
 
         [HttpPost]
@@ -45,7 +47,7 @@ namespace CheeseMVC.Controllers
                 return Redirect("/Menu/ViewMenu?id=" + newMenu.ID);
             }
 
-            return Redirect("/Menu/Add");
+            return View(addMenuViewModel);
         }
 
         public IActionResult ViewMenu(int id)
